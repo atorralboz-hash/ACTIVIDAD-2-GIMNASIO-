@@ -5,12 +5,19 @@ import random
 RUTINAS_DIR = "rutinas"
 EJERCICIOS_CSV = "ejercicios.csv"
 
-# Crear carpeta de rutinas si no existe
+# Crear carpeta de rutinas si no existe al iniciar el script
 if not os.path.exists(RUTINAS_DIR):
     os.makedirs(RUTINAS_DIR)
 
 
 def cargar_ejercicios():
+    """
+    Lee el archivo CSV de ejercicios y los carga en un diccionario.
+
+    Returns:
+        dict: Un diccionario donde las claves son los grupos musculares
+              y los valores son listas de ejercicios.
+    """
     ejercicios = {}
     with open(EJERCICIOS_CSV, newline='', encoding="utf-8") as fichero:
         lector = csv.DictReader(fichero)
@@ -22,6 +29,18 @@ def cargar_ejercicios():
 
 
 def pedir_entero(mensaje, minimo, maximo):
+    """
+    Solicita al usuario un número entero dentro de un rango específico.
+    Valida que la entrada sea numérica y esté dentro de los límites.
+
+    Args:
+        mensaje (str): El texto que se mostrará al usuario.
+        minimo (int): El valor mínimo aceptado.
+        maximo (int): El valor máximo aceptado.
+
+    Returns:
+        int: El número validado ingresado por el usuario.
+    """
     while True:
         try:
             valor = int(input(mensaje))
@@ -34,6 +53,10 @@ def pedir_entero(mensaje, minimo, maximo):
 
 
 def crear_rutina():
+    """
+    Genera una rutina de entrenamiento aleatoria basada en los parámetros
+    introducidos por el usuario (días y tiempo) y ofrece guardarla en un archivo.
+    """
     ejercicios = cargar_ejercicios()
 
     dias = pedir_entero("¿Cuántos días entrenas a la semana? (3-5): ", 3, 5)
@@ -44,16 +67,17 @@ def crear_rutina():
 
     rutina = {}
     for i in range(dias):
-        # PEP 8: Espacios alrededor del operador +
+        # Inicializamos la lista de ejercicios para cada día
         rutina[f"Día {i + 1}"] = []
 
-    # Repartir grupos musculares asegurando que todos aparezcan
+    # Repartir grupos musculares asegurando que todos aparezcan al menos una vez
     for i, grupo in enumerate(grupos):
         dia = f"Día {(i % dias) + 1}"
         rutina[dia].append(grupo)
 
     resultado = f"Rutina de entrenamiento\nDías por semana: {dias}\nTiempo por sesión: {tiempo} minutos\n\n"
 
+    # Construcción del texto final de la rutina seleccionando ejercicios al azar
     for dia, grupos_dia in rutina.items():
         resultado += f"{dia}:\n"
         for grupo in grupos_dia:
@@ -74,6 +98,10 @@ def crear_rutina():
 
 
 def cargar_rutina():
+    """
+    Lista los archivos de rutina guardados en la carpeta 'rutinas'
+    y permite al usuario seleccionar uno para leerlo en pantalla.
+    """
     archivos = os.listdir(RUTINAS_DIR)
     if not archivos:
         print("No hay rutinas guardadas.")
@@ -91,6 +119,9 @@ def cargar_rutina():
 
 
 def menu():
+    """
+    Función principal que muestra el menú de opciones y gestiona el flujo del programa.
+    """
     while True:
         print("\n--- MENÚ PRINCIPAL ---")
         print("1. Crear nueva rutina")

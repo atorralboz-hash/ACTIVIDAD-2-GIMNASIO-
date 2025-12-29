@@ -1,0 +1,21 @@
+Rutina de entrenamiento
+Días por semana: 5
+Tiempo por sesión: 80 minutos
+
+Día 1:
+  - Espalda: Jalón al pecho
+  - Biceps: Curl con barra
+
+Día 2:
+  - Pierna: Sentadillas
+  - Pecho: Flexiones
+
+Día 3:
+  - Hombro: Press militar
+
+Día 4:
+  - Abdominales: Plancha
+
+Día 5:
+  - Triceps: Press francés
+
