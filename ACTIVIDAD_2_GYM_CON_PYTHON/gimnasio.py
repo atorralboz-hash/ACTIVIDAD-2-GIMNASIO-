@@ -9,6 +9,7 @@ EJERCICIOS_CSV = "ejercicios.csv"
 if not os.path.exists(RUTINAS_DIR):
     os.makedirs(RUTINAS_DIR)
 
+
 def cargar_ejercicios():
     ejercicios = {}
     with open(EJERCICIOS_CSV, newline='', encoding="utf-8") as fichero:
@@ -18,6 +19,7 @@ def cargar_ejercicios():
             ejercicio = fila["ejercicio"]
             ejercicios.setdefault(grupo, []).append(ejercicio)
     return ejercicios
+
 
 def pedir_entero(mensaje, minimo, maximo):
     while True:
@@ -30,6 +32,7 @@ def pedir_entero(mensaje, minimo, maximo):
         except ValueError:
             print("Entrada no válida")
 
+
 def crear_rutina():
     ejercicios = cargar_ejercicios()
 
@@ -41,7 +44,8 @@ def crear_rutina():
 
     rutina = {}
     for i in range(dias):
-        rutina[f"Día {i+1}"] = []
+        # PEP 8: Espacios alrededor del operador +
+        rutina[f"Día {i + 1}"] = []
 
     # Repartir grupos musculares asegurando que todos aparezcan
     for i, grupo in enumerate(grupos):
@@ -68,6 +72,7 @@ def crear_rutina():
             f.write(resultado)
         print("Rutina guardada correctamente.")
 
+
 def cargar_rutina():
     archivos = os.listdir(RUTINAS_DIR)
     if not archivos:
@@ -83,6 +88,7 @@ def cargar_rutina():
     with open(ruta, encoding="utf-8") as f:
         print("\n--- RUTINA CARGADA ---\n")
         print(f.read())
+
 
 def menu():
     while True:
@@ -103,4 +109,7 @@ def menu():
         else:
             print("Opción no válida")
 
-menu()
+
+if __name__ == "__main__":
+    menu()
+
