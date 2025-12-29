@@ -1,0 +1,21 @@
+Rutina de entrenamiento
+Días por semana: 5
+Tiempo por sesión: 90 minutos
+
+Día 1:
+  - Pierna: Sentadillas
+  - Pecho: Press banca
+
+Día 2:
+  - Espalda: Dominadas
+  - Hombro: Pájaros con mancuernas
+
+Día 3:
+  - Abdominales: Plancha
+
+Día 4:
+  - Biceps: Curl alterno
+
+Día 5:
+  - Triceps: Extensión de tríceps
+

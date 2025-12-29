@@ -1,0 +1,19 @@
+Rutina de entrenamiento
+Días por semana: 4
+Tiempo por sesión: 70 minutos
+
+Día 1:
+  - Hombro: Press militar
+  - Pecho: Flexiones
+
+Día 2:
+  - Pierna: Zancadas
+  - Triceps: Press francés
+
+Día 3:
+  - Abdominales: Plancha
+  - Espalda: Dominadas
+
+Día 4:
+  - Biceps: Curl alterno
+

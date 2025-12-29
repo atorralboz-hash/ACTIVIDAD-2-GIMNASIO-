@@ -1,0 +1,19 @@
+Rutina de entrenamiento
+Días por semana: 4
+Tiempo por sesión: 60 minutos
+
+Día 1:
+  - Espalda: Jalón al pecho
+  - Abdominales: Elevaciones de piernas
+
+Día 2:
+  - Biceps: Curl alterno
+  - Hombro: Press militar
+
+Día 3:
+  - Pecho: Press banca
+  - Triceps: Fondos en paralelas
+
+Día 4:
+  - Pierna: Prensa de piernas
+
